@@ -1,0 +1,28 @@
+{
+  "name": "webpack-trail",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "<2285546178@qq.com>",
+  "license": "MIT",
+  "dependencies": {
+    "typescript": "^4.6.3",
+    "ts-node": "^10.7.0",
+    "@babel/core": "7.12.3",
+    "@babel/generator": "7.12.5",
+    "@babel/parser": "7.12.5",
+    "@babel/preset-env": "7.12.1",
+    "@babel/traverse": "7.12.5",
+    "@types/babel__traverse": "7.0.15"
+  },
+  "devDependencies": {
+    "@types/babel__core": "7.1.12",
+    "@types/babel__generator": "7.6.2",
+    "@types/babel__parser": "7.1.1",
+    "@types/babel__preset-env": "7.9.1",
+    "@types/node": "14.14.6"
+  },
+  "scripts": {
+    "run":"node -r ts-node/register src/let-to-var.ts",
+    "chrome":"node -r ts-node/register  --inspect-brk src/let-to-var.ts "
+  }
+}
