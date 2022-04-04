@@ -14,7 +14,7 @@ import {mkdir} from 'shelljs';
 
 // 设置根目录
 const projectName = 'project_css'
-const projectRoot = resolve(__dirname, `../${projectName}`)
+const projectRoot = resolve(__dirname, `../src/${projectName}`)
 console.log(1111,projectRoot)
 // 类型声明
 type DepRelation = { key: string, deps: string[], code: string|null|undefined }[]
@@ -75,19 +75,11 @@ function collectCodeAndDeps(filepath: string) {
     return
   }
   // 获取文件内容，将内容放至 depRelation
-  let code = readFileSync(filepath).toString()
+  let codeOrigin = readFileSync(filepath).toString()
   if(/\.css$/.test(filepath)){ // 如何文件路径以 .css 结尾
-    code = `
-      const str = ${JSON.stringify(code)}
-      if(document){
-        const style = document.createElement('style')
-        style.innerHTML = str
-        document.head.appendChild(style)
-      }
-      export default str
-    ` 
+    codeOrigin =  require('../loaders/css-loader')(codeOrigin)
   }
-  const { code: es5Code } = babel.transform(code, {
+  const { code: es5Code } = babel.transform(codeOrigin, {
     presets: ['@babel/preset-env']
   }) || {code:''}
   // 初始化 depRelation[key]
