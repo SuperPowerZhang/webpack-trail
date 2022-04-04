@@ -86,7 +86,7 @@ function collectCodeAndDeps(filepath: string) {
   const item = { key, deps: [], code: es5Code }
   depRelation.push(item)
   // 将代码转为 AST
-  const ast = parse(code, { sourceType: 'module' })
+  const ast = parse(codeOrigin, { sourceType: 'module' })
   // 分析文件依赖，将内容放至 depRelation
   traverse(ast, {
     enter: path => {
