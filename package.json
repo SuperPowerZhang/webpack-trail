@@ -23,6 +23,7 @@
   },
   "scripts": {
     "run":"node -r ts-node/register src/let-to-var.ts",
+    "bundle":"node -r ts-node/register src/utils/bundler_1.ts",
     "chrome":"node -r ts-node/register  --inspect-brk src/let-to-var.ts ",
     "es6":"node -r ts-node/register  src/utils/es6-es5.ts "
   }
