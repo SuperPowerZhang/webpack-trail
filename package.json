@@ -12,18 +12,20 @@
     "@babel/parser": "7.12.5",
     "@babel/preset-env": "7.12.1",
     "@babel/traverse": "7.12.5",
-    "@types/babel__traverse": "7.0.15"
+    "@types/babel__traverse": "7.0.15",
+    "shelljs": "0.8.4"
   },
   "devDependencies": {
     "@types/babel__core": "7.1.12",
     "@types/babel__generator": "7.6.2",
     "@types/babel__parser": "7.1.1",
     "@types/babel__preset-env": "7.9.1",
-    "@types/node": "14.14.6"
+    "@types/node": "14.14.6",
+    "@types/shelljs": "0.8.8"
   },
   "scripts": {
     "run":"node -r ts-node/register src/let-to-var.ts",
-    "bundle":"node -r ts-node/register src/utils/bundler_3.ts",
+    "bundle":"node -r ts-node/register src/utils/bundler_css.ts",
     "chrome":"node -r ts-node/register  --inspect-brk src/let-to-var.ts ",
     "es6":"node -r ts-node/register  src/utils/es6-es5.ts "
   }
